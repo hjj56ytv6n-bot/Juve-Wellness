@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YPO Workshop — Juve Wellness</title>
+  <meta name="description" content="A starter site for the YPO workshop, connected live to Supabase." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">Juve Wellness</p>
+    <h1>YPO Workshop</h1>
+    <p class="lede">A starter site, deployed on Vercel and connected live to Supabase.</p>
+    <p id="status" class="status status--pending">Connecting to Supabase…</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Leave a note</h2>
+      <p class="hint">Notes are saved to the Supabase database and shown to everyone.</p>
+      <form id="note-form" class="form">
+        <label>
+          <span>Your name</span>
+          <input id="name" name="name" type="text" maxlength="60" required placeholder="Rhonda" />
+        </label>
+        <label>
+          <span>Note</span>
+          <textarea id="note" name="note" maxlength="280" required rows="3" placeholder="Excited for the workshop…"></textarea>
+        </label>
+        <button id="submit" type="submit">Post note</button>
+        <p id="form-message" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Notes <span id="count" class="count"></span></h2>
+      <ul id="notes" class="notes">
+        <li class="empty">Loading…</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for the YPO workshop · Data stored in Supabase · Hosted on Vercel</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
